@@ -10,7 +10,7 @@ $('body').html(`
 //adding out html content here
 
 //Declare our array of topics
-var actions = ["Vaping", "Vapor", "Technology", "Memes", "Money", "Windows", "Linux", "Mac", "Pc", "Terminal","Forums", "Beach", "Miami";
+var actions = ["Vaping", "Vapor", "Technology", "Memes", "Money", "Windows", "Linux", "Mac", "Pc", "Terminal","Forums", "Beach", "Miami";]
 //input field catch
 var searchItem = $('#search-for');
 //boolean to trigger adding category or not
