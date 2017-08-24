@@ -10,7 +10,7 @@ $('body').html(`
 //adding out html content here
 
 //Declare our array of topics
-var subject = ["Cats", "Create", "World"];
+var actions = ["Vaping", "Vapor", "Technology", "Memes", "Money", "Windows", "Linux", "Mac", "Pc", "Terminal","Forums", "Beach", "Miami";
 //input field catch
 var searchItem = $('#search-for');
 //boolean to trigger adding category or not
@@ -132,6 +132,10 @@ function showMePictures(lookingFor) {
 
 			console.log(`${response.data[bufferIndex].images.original_still.url}`); // pulling URL's for pictures and adding images
 			$('#frame').prepend(`<img class="notMoving" src="${response.data[bufferIndex].images.original_still.url}" data-id="${response.data[bufferIndex].id}" height="150" width="150""> `);
+			var gifDiv = $("<div>"); //div for the gifs to go inside
+            gifDiv.addClass("gifDiv");
+			var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            gifDiv.append(gifRating);
 			//-----------------------------------------------------
 			// 	console.log(response.data[p].images.original_still.url);
 			// 	console.log(response.data[p].images.original.url);
@@ -148,21 +152,21 @@ function showMePictures(lookingFor) {
 			//beginnign function that adds images
 function addDefault() {
 
-	for (i in subject) {
-		console.log(subject[i]);
-		$('#searchButtons').append(`<button type = "button" class="infoPic btn btn-info" data-name = ${subject[i]} > ${subject[i]} </button>`);
+	for (i in actions) {
+		console.log(actions[i]);
+		$('#searchButtons').append(`<button type = "button" class="infoPic btn btn-info" data-name = ${actions[i]} > ${actions[i]} </button>`);
 	};
 
 }
 			//capitalize first letter in topck
 String.prototype.capitalizeFirstLetter = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
-}
 			
+}
 			//create button with topic
 function addTheButton() {
 	// console.log(searchItem.val());
-	// console.log(subject);
+	// console.log(actions);
 	// str = str.replace(/\s/g, '')
 	console.log(searchItem.val().capitalizeFirstLetter())
 	stringToCapitalize = searchItem.val().capitalizeFirstLetter();
@@ -184,9 +188,9 @@ for ( j in badwords) {
 }
 
 
-	for (i in subject) {
+	for (i in actions) {
 		tempBoolean = true;
-		if ((searchItem.val().toLowerCase() === subject[i].toLowerCase()) || ((searchItem.val().toLowerCase() === ''))) {
+		if ((searchItem.val().toLowerCase() === actions[i].toLowerCase()) || ((searchItem.val().toLowerCase() === ''))) {
 
 			return responsiveVoice.speak(`Category exists or undefined`);
 
@@ -196,8 +200,8 @@ for ( j in badwords) {
 		}
 	}
 	if (tempBoolean == false) {
-		subject.push(searchItem.val());
-		console.log(subject);
+		actions.push(searchItem.val());
+		console.log(actions);
 		addTheButton();
 	}
 
