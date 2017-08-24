@@ -132,9 +132,16 @@ function showMePictures(lookingFor) {
 
 			console.log(`${response.data[bufferIndex].images.original_still.url}`); // pulling URL's for pictures and adding images
 			$('#frame').prepend(`<img class="notMoving" src="${response.data[bufferIndex].images.original_still.url}" data-id="${response.data[bufferIndex].id}" height="150" width="150""> `);
-			var gifDiv = $("<div>"); //div for the gifs to go inside
+			var results = response.data; //shows results of gifs
+        		if (results == ""){
+          		alert("There isn't a gif for this selected button");
+       		}
+        		for (var i=0; i<results.length; i++){
+
+            var gifDiv = $("<div>"); //div for the gifs to go inside
             gifDiv.addClass("gifDiv");
-			var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            // pulling rating of gif
+            var gifRating = $("<p>").text("Rating: " + results[i].rating);
             gifDiv.append(gifRating);
 			//-----------------------------------------------------
 			// 	console.log(response.data[p].images.original_still.url);
