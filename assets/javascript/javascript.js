@@ -52,6 +52,7 @@ function displayGifs(){
         var results = response.data; //shows results of gifs
         if (results == ""){
           alert("There isn't a gif for this selected button");
+          responsiveVoice.speak(`Ten pictures of ${$(response).data('name')}?`);
         }
         for (var i=0; i<results.length; i++){
 
