@@ -15,4 +15,4 @@ Heroku: https://shopglobal.github.io/giphy
 
 Copyright
 
-Mark Allen Evans (C) 2017. All Rights Reserved.
+Mark Allen Evans (C) 2017. For Educational Purposes  
